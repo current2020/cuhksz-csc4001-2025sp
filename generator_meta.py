@@ -40,10 +40,10 @@ def generate_complete_random(t):
     res = ""
 
     num = random.randint(800, 1000)
-    invalid_portion = 3 # out of 100
+    invalid_proportion = 3 # out of 100
     for _ in range(num):
         do_gen_invalid = random.randint(1, 100)
-        if do_gen_invalid <= invalid_portion:
+        if do_gen_invalid <= invalid_proportion:
             res += generate_random_skip_code()
         else:
             res += str(random.randint(1, 19)) + " " + str(random.randint(1, 19)) + "\n"
@@ -219,11 +219,11 @@ def strategy_standard_identity(t):
     res1 = ""
 
     num = random.randint(800, 1000)
-    invalid_portion = 3 # out of 100
+    invalid_proportion = 3 # out of 100
     for _ in range(num):
         do_gen_invalid = random.randint(1, 100)
         nxtline = default_skip_code
-        if do_gen_invalid <= invalid_portion:
+        if do_gen_invalid <= invalid_proportion:
             nxtline = generate_random_skip_code()
         else:
             distant, close, border, occupied = Go.get_positions()
@@ -306,10 +306,10 @@ def strategy_transformation(t):
     res2 = ""
 
     num = random.randint(800, 1000)
-    invalid_portion = 3 # out of 100
+    invalid_proportion = 3 # out of 100
     for _ in range(num):
         do_gen_invalid = random.randint(1, 100)
-        if do_gen_invalid <= invalid_portion:
+        if do_gen_invalid <= invalid_proportion:
             res1 += generate_random_skip_code()
             res2 += generate_random_skip_code()
         else:

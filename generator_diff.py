@@ -40,10 +40,10 @@ def strategy_complete_random(t):
     res = ""
 
     num = random.randint(800, 1000)
-    invalid_portion = 1 # out of 100
+    invalid_proportion = 1 # out of 100
     for _ in range(num):
         do_gen_invalid = random.randint(1, 100)
-        if do_gen_invalid <= invalid_portion:
+        if do_gen_invalid <= invalid_proportion:
             res += generate_random_skip_code()
         else:
             res += str(random.randint(1, 19)) + " " + str(random.randint(1, 19)) + "\n"
@@ -55,10 +55,10 @@ def strategy_few_moves(t):
     res = ""
 
     num = random.randint(0, 6)
-    invalid_portion = 40 # out of 100
+    invalid_proportion = 40 # out of 100
     for _ in range(num):
         do_gen_invalid = random.randint(1, 100)
-        if do_gen_invalid <= invalid_portion:
+        if do_gen_invalid <= invalid_proportion:
             res += generate_random_skip_code()
         else:
             res += str(random.randint(1, 19)) + " " + str(random.randint(1, 19)) + "\n"
