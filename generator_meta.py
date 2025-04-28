@@ -220,7 +220,7 @@ def strategy_standard_identity(t):
 
     num = random.randint(800, 1000)
     invalid_proportion = 3 # out of 100
-    for _ in range(num):
+    for i in range(num):
         do_gen_invalid = random.randint(1, 100)
         nxtline = default_skip_code
         if do_gen_invalid <= invalid_proportion:
@@ -228,13 +228,19 @@ def strategy_standard_identity(t):
         else:
             distant, close, border, occupied = Go.get_positions()
             opt = random.randint(1, 100)
-            if 1 <= opt and opt <= 5:
+            if 3 <= opt and opt <= 30 and len(border) == 0:
+                opt = 50
+            if 96 <= opt and opt <= 100 and len(distant) == 0:
+                opt = 50
+            if i == 0:
+                opt = 100
+            if 1 <= opt and opt <= 2:
                 nxtline = get_nxt_line_from_choices(occupied)
-            elif 6 <= opt and opt <= 30:
+            elif 3 <= opt and opt <= 30:
                 nxtline = get_nxt_line_from_choices(border)
-            elif 31 <= opt and opt <= 80:
+            elif 31 <= opt and opt <= 95:
                 nxtline = get_nxt_line_from_choices(close)
-            elif 81 <= opt and opt <= 100:
+            elif 96 <= opt and opt <= 100:
                 nxtline = get_nxt_line_from_choices(distant)
         Go.place_stone(nxtline, 'B' if color == 0 else 'W')
         color = color ^ 1
