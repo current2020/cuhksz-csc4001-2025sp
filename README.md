@@ -1,6 +1,6 @@
-# CUHKSZ-CSC4303-2025sp Project
+# CUHKSZ-CSC4001-2025sp Project
 
-This is the project repo for the software engineering course of cuhksz-csc4303-2025sp.
+This is the project repo for the software engineering course of cuhksz-csc4001-2025sp.
 
 In this project, we are required to use both differential testing and metamorphic testing to debug a Go simulator.
 
